@@ -31,6 +31,14 @@
             center: [-64.5, -4.06],
             zoom: 5.55
         });
+        
+        map.on('mouseenter', 'locais_votacao', function (e) {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        map.on('mouseleave', 'locais_votacao', function (e) {
+            map.getCanvas().style.cursor = '';
+        });
 
         map.on('click', function (e) {
             var features = map.queryRenderedFeatures(e.point, {
